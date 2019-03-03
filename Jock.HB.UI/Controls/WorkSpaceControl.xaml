@@ -1,0 +1,95 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Jock.HB.UI.Controls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013" x:Class="Jock.HB.UI.Controls.WorkSpaceControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Visibility="{Binding Visibility}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ComboBox x:Name="HotelsComboBox" Grid.Row="0" Margin="10" 
+                      ItemsSource="{Binding Hotels}" IsReadOnly="True" 
+                      Text="{Binding ChoosenHotel}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="DropDownClosed">
+                        <i:InvokeCommandAction Command="{Binding ChangeComboBoxCommand}"
+                                               CommandParameter="{Binding}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="1" Grid.Column="1"
+                    Margin="5" Background="Transparent"
+                    Foreground="Azure" Content="Забронировать"
+                    Command="{Binding ToBookHotelCommand}" CommandParameter="{Binding}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.25*"/>
+                <RowDefinition Height="0.25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.35*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Информация:"
+                   Background="Transparent" Foreground="Azure"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Количество звёзд:"
+                   Background="Transparent" Foreground="Azure"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Стоимость за номер:"
+                   Background="Transparent" Foreground="Azure"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Свободных мест:"
+                   Background="Transparent" Foreground="Azure"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Контактный телефон:"
+                   Background="Transparent" Foreground="Azure"/>
+            <Label Grid.Row="0" Grid.Column="1" Background="Transparent" 
+                   Foreground="Azure" Content="{Binding HotelName}"/>
+            <Label Grid.Row="1" Grid.Column="1" Background="Transparent" 
+                   Foreground="Azure" Content="{Binding HotelStars}"/>
+            <Label Grid.Row="2" Grid.Column="1" Background="Transparent" 
+                   Foreground="Azure" Content="{Binding HotelPrice}"/>
+            <Label Grid.Row="3" Grid.Column="1" Background="Transparent" 
+                   Foreground="Azure" Content="{Binding HotelRooms}"/>
+            <Label Grid.Row="4" Grid.Column="1" Background="Transparent" 
+                   Foreground="Azure" Content="{Binding HotelInfo}"/>
+        </Grid>
+        <Rectangle Grid.Row="1" Grid.Column="0"
+                   Grid.ColumnSpan="2" Panel.ZIndex="-1">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="-1,0" Opacity="0.5">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF142278" Offset="0.543"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <esri:MapView Margin="10" WrapAroundMode="EnabledWhenSupported"
+                      Grid.Row="0" Grid.Column="0" Map="{Binding Map}"/>
+    </Grid>
+</UserControl>
