@@ -4,3 +4,9 @@ C:\Лабы\HotelBooking\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.csprojResolveAs
 C:\Лабы\HotelBooking\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.csproj.CoreCompileInputs.cache
 C:\Лабы\HotelBooking\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.dll
 C:\Лабы\HotelBooking\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.pdb
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\bin\Debug\Jock.HB.BL.dll
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\bin\Debug\Jock.HB.BL.pdb
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.csprojResolveAssemblyReference.cache
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.csproj.CoreCompileInputs.cache
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.dll
+C:\Лабы\Git\Jock.HB\Jock.HB.BL\obj\Debug\Jock.HB.BL.pdb

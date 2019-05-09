@@ -17,7 +17,7 @@
         None
     </Window.WindowStyle>
     <Window.Background>
-        <ImageBrush ImageSource="C:\Лабы\HotelBooking\Jock.HB\images\1.jpg"/>
+        <ImageBrush ImageSource="/Resources/back.bmp"/>
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
